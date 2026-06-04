@@ -4,7 +4,7 @@ const User = require("../models/user");
 //add user
 userRouter.post("/add", async(req,res)=>{
     try {
-        let newuser=new User(req,body);
+        let newuser=new User(req.body);
         let result=await newuser.save();
         res.send({user:result, msg:"user is added"})
 
